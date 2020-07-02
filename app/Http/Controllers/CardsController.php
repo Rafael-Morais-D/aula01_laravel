@@ -18,4 +18,14 @@ class CardsController extends Controller
             return view('welcome')->with(['cards' => $cards]);
         }
     }
+
+    public function delete($id) {
+        // encontrando registro pelo id atraves do metodo find
+        $card = Card::find($id);
+
+        // efetuando soft delete para não excluir registro efetivamente e sim popular a coluna deleted_at com a data atual, passando apenas a impressao que aquele registro deixou de existir, mas aquele registro ainda está na nossa base de dados
+        if($card->delete()){
+            return response()->json('Registro exclúido com sucesso!', 200);
+        };
+    }
 }

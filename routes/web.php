@@ -17,3 +17,12 @@ use Illuminate\Support\Facades\Route;
 
 // listando cards
 Route::get('/cards', 'CardsController@index');
+
+// criando card
+Route::post('/cards', 'CardsController@create');
+
+// alterando card
+Route::put('/cards/{id}', 'CardsController@edit');
+
+// excluindo card
+Route::delete('/cards/{id}', 'CardsController@delete');
