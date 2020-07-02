@@ -23,3 +23,6 @@ Route::post('/cards', 'CardsController@create');
 
 // alterando card
 Route::put('/cards/{id}', 'CardsController@edit');
+
+// excluindo card
+Route::delete('/cards/{id}', 'CardsController@delete');
