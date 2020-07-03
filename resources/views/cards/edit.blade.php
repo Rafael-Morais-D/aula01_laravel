@@ -3,7 +3,7 @@
 @section('content')
     <h1>Modificando Cartões</h1>
 
-    <form method="POST" action="/cartoes/modificar/{{$card->id}}" enctype="multipart/form-data">
+    <form method="POST" action="/cards/update/{{$card->id}}" enctype="multipart/form-data">
         @csrf
         {{ method_field('PUT') }}
 
