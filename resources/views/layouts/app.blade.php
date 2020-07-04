@@ -64,8 +64,8 @@
                                     Olá, {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
-                                <div class="dropdown-menu border-0 dropdown-menu-right bg-dark" aria-labelledby="navbarDropdown">
-                                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="pl-0 dropdown-item b-none text-white">
+                                <div class="dropdown-menu border-0 dropdown-menu-right bg-dark text-center mx-0 px-0" aria-labelledby="navbarDropdown">
+                                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="px-0 dropdown-item b-none text-white">
                                         {{ __('Sair') }}
                                     </a>
 

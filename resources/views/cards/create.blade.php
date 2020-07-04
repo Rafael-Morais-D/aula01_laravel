@@ -3,13 +3,21 @@
 @section('content')
     <h1>Cadastro de Cartões</h1>
 
-    <form method="POST" action="/cards/add" enctype="multipart/form-data">
+    <form method="POST" action="/cards/create" enctype="multipart/form-data">
         @csrf
         {{ method_field('POST') }}
         <div class="form-group col-md-6 col-sm-12">
             <label for="title">Título</label>
             <input type="text" name="title"  value="{{ old('title') }}" class="form-control{{$errors->has('title') ? ' is-invalid':''}}" id="title">
             <div class="invalid-feedback">{{ $errors->first('title') }}</div>
+        </div>
+
+        <div class="form-group col-md-6 col-sm-12">
+            <label for="image">Imagem</label>
+            <label class="btn btn-dark col-12">
+                Escolher arquivo<input type="file" name="image"  value="{{ old('image') }}" class="form-control{{$errors->has('image') ? ' is-invalid':''}}" id="image" hidden>
+            </label>
+            <div class="invalid-feedback">{{ $errors->first('image') }}</div>
         </div>
 
         <div class="form-group col-md-6 col-sm-12">

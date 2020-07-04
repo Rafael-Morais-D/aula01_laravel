@@ -23,8 +23,8 @@ Route::get('/', function() {
 Route::get('/cards', 'CardsController@index');
 
 // criando card
-Route::get('/cards/add', 'CardsController@add');
-Route::post('/cards/add', 'CardsController@create');
+Route::get('/cards/create', 'CardsController@add');
+Route::post('/cards/create', 'CardsController@create');
 
 // alterando card
 Route::get('/cards/update/{id}', 'CardsController@edit');
@@ -32,6 +32,9 @@ Route::put('/cards/update/{id}', 'CardsController@update');
 
 // excluindo card
 Route::delete('/cards/remove/{id}', 'CardsController@delete');
+
+// filtrando cards
+Route::get('/cards/search', 'CardsController@search');
 
 Auth::routes();
 
